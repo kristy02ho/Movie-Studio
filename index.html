@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/8b0c8514b2.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+
+</head>
+
+<body>
+    <section id="overlay">
+    <nav>
+        <figure>
+            <img src="./logo.png" alt="" class="movie__logo">
+        </figure>
+        <ul class="nav__links">
+            <li><a href="#" class="nav__link">Home</a></li>
+            <li><a href="#" class="nav__link">Find your movie</a></li>
+            <li><a href="#"><button class="btn">Contact</button></a></li>
+        </ul>
+    </nav>
+    <header>
+        <div class="header__container">
+            <div class="header__title">
+                <h1>Browse our movies</h1>
+            </div>
+            <div class="search__container">
+                <input class="search-bar" type="text" placeholder="Search by movie name">
+                <div class="magnifiying-glass__container">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            </div>
+        </div>
+
+    </header>
+</section>
+<section id="movies__main">
+    <div class="movies__container">
+    <div class="movies__header">
+        <h2 class="results">Search results:</h2>
+        <select id="filter">
+            <option value="A-Z">Alphabetical, A to Z</option>
+            <option value="Z-A">Alphabetical, Z to A</option>
+        </select>
+    </div>
+    <div class="movie-list">
+        <div class="movies movies__loading">
+            <a href="https://www.imdb.com/title/${movie.imdbID}" class="movie__link">
+            <figure class="movie__img--wrapper">
+                <img src="${movie.Poster}" alt="" class="movie__img">
+            </figure>
+            <div class="movie__title"> Movie Title
+            </div>
+            <div class="movie__description">
+                <p class="movie__year">Movie Year</p>
+            </div>
+            </a>
+        </div>
+</div>
+</div>
+</section>
+    
+</body>
+<script src="index.js"></script>
+</html>
