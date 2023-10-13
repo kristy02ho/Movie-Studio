@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/8b0c8514b2.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <section id="overlay">
+        <div class="nav__wrapper">
+            <nav>
+                <figure>
+                    <img src="./logo.png" alt="" class="movie__logo">
+                </figure>
+                <ul class="nav__links">
+                    <li><a href="./index.html" class="nav__link">Home</a></li>
+                    <li><a href="./search.html" class="nav__link">Search</a></li>
+                </ul>
+                <button class="btn__menu" onclick="openMenu()">
+                    <i class="fas fa-bars"></i>
+                  </button>
+                  <div class="menu__backdrop">
+                    <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+                      <i class="fas fa-times"></i>
+                    </button>
+                    <ul class="menu__links">
+                      <li class="menu__list">
+                        <a href="./index.html" class="menu__link" onclick="closeMenu()">Home</a>
+                      </li>
+                      <li class="menu__list">
+                        <a href="./search.html" class="menu__link" onclick="closeMenu()">Search</a>
+                      </li>
+                      <li class="menu__list">
+                        <a class="menu__link no-cursor" onclick="closeMenu()">Contacts</a>
+                      </li>
+                    </ul>
+                  </div>
+            </nav>
+        </div>
+        <header>
+            <div class="header__container">
+                <div class="header__title">
+                    <h1>Browse our movies</h1>
+                </div>
+                <div class="search__container">
+                    <form action="search.html" method="get">
+                        <input class="search-bar" id="search" type="text" placeholder="Search by movie name" required>
+                        <button class="fa-solid fa-magnifying-glass" onclick="placeOrder(this.form)"></button>
+                    </form>
+                </div>
+            </div>
+        </header>
+    </section>
+    <section id="movies__main">
+        <div class="movies__container">
+            <div class="movies__search">
+                <h2 class="results">Search results:</h2>
+                <select id="filter" onchange="filterMovies(event)">
+                    <option value="" disabled selected>Sort</option>
+                    <option value="A-Z">Alphabetical, A to Z</option>
+                    <option value="Z-A">Alphabetical, Z to A</option>
+                    <option value="HIGH_RATING">Highest Rated</option>
+                    <option value="LOW_RATING">Lowest Rated</option>
+                </select>
+            </div>
+            <div class="searches search__loading">
+                <i class="fas fa-spinner search__loading--spinner"></i>
+              </div>
+            <div class="search__movie">
+                <div class="movie-list search__movie--list">
+                    <!-- <div class="movies movies__loading">
+                        <a href="https://www.imdb.com/title/${movie.imdbID}" class="movie__link">
+                            <figure class="movie__img--wrapper">
+                                <img src="${movie.Poster}" alt="" class="movie__img">
+                            </figure>
+                            <div class="movie__title"> Movie Title
+                            </div>
+                            <div class="movie__description">
+                                <p class="movie__year">Movie Year</p>
+                                <div class="rating">
+                                    <figure class="star__logo">
+                                        <img src="./star.png" alt="" class="star">
+                                    </figure>
+                                    <p class="movie__rating">5.0</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="search.js"></script>
+
+</html>
